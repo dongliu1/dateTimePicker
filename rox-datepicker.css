@@ -1,0 +1,254 @@
+
+/************************calendar****font-icons***********************************/
+@font-face {
+    font-family: 'sk';
+    src: url('font-icon/font/sk.eot?97258324');
+    src: url('font-icon/font/sk.eot?97258324#iefix') format('embedded-opentype'),
+    url('font-icon/font/sk.woff2?97258324') format('woff2'),
+    url('font-icon/font/sk.woff?97258324') format('woff'),
+    url('font-icon/font/sk.ttf?97258324') format('truetype'),
+    url('font-icon/font/sk.svg?97258324#sk') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'sk';
+    src: url('../font/sk.svg?97258324#sk') format('svg');
+  }
+}
+*/
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+    font-family: "sk";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    /* opacity: .8; */
+
+    /* For safety - reset parent styles, that can break glyph codes*/
+    font-variant: normal;
+    text-transform: none;
+
+    /* fix buttons height, for twitter bootstrap */
+    line-height: 1em;
+
+    /* Animation center compensation - margins should be symmetric */
+    /* remove if not needed */
+    margin-left: .2em;
+
+    /* you can be more comfortable with increased icons size */
+    /* font-size: 120%; */
+
+    /* Font smoothing. That was taken from TWBS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Uncomment for 3D effect */
+    /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-calendar:before { content: '\e800'; } /* '' */
+.icon-calendar-1:before { content: '\e801'; } /* '' */
+.icon-calendar-2:before { content: '\e802'; } /* '' */
+.icon-calendar-3:before { content: '\e803'; } /* '' */
+.icon-left-circled:before { content: '\f0a8'; } /* '' */
+.icon-right-circled:before { content: '\f0a9'; } /* '' */
+.icon-angle-circled-left:before { content: '\f137'; } /* '' */
+.icon-angle-circled-right:before { content: '\f138'; } /* '' */
+.icon-calendar-plus-o:before { content: '\f271'; } /* '' */
+.icon-calendar-check-o:before { content: '\f274'; } /* '' */
+
+/******共有样式**************/
+.clear{clear: both;}
+
+/********************************calendar****css*******blue主题****************************/
+.sk-datepicker-blue.sk-datepicker-contain{display:none;font-size:small;position:absolute;width:15em;padding-bottom:0.5em;background: #fff;border-radius: 3px;box-shadow: 1px 1px 2px 2px #ccc;border:1px solid #ddd;}
+.sk-datepicker-blue .sk-datepicker-header{border-radius:3px 3px 0 0;text-align: center;position:relative;background-color: #398def;padding:5px;color:#fff;}
+.sk-datepicker-blue .sk-datepicker-header a{text-decoration: none;color:#398def;text-align:center;background-color: #fff;border-radius:4px;display:inline-block;width:1.3em;height:1.3em;}
+.sk-datepicker-blue .sk-datepicker-header a:hover{background-color: #ddd;}
+.sk-datepicker-blue .sk-datepicker-header .sk-datepicker-prev,.sk-datepicker-blue .sk-datepicker-header .sk-datepicker-next{position:absolute;}
+.sk-datepicker-blue .sk-datepicker-header .sk-datepicker-prev{left:5px;}
+.sk-datepicker-blue .sk-datepicker-header .sk-datepicker-next{right:5px;}
+.sk-datepicker-blue .sk-datepicker-header .sk-datepicker-year{width:3em;display:inline-block;}
+.sk-datepicker-blue .sk-datepicker-header .sk-datepicker-month{width:2em;display:inline-block;}
+.sk-datepicker-blue.sk-datepicker-contain table{width:100%;height:147px;}
+.sk-datepicker-blue.sk-datepicker-contain table td{text-align: center;}
+.sk-datepicker-blue .sk-datepicker-calendar a{text-decoration: none;color:#000;display: inline-block;width:100%;height:100%;}
+.sk-datepicker-blue .sk-datepicker-calendar a:hover,.sk-datepicker-blue .sk-datepicker-calendar .sk-datepicker-active{color:#fff;background-color: #398def;}
+.sk-datepicker-blue .sk-datepicker-time{padding:5px;}
+.sk-datepicker-blue .sk-datepicker-time .sk-datepicker-title{float: left;}
+.sk-datepicker-blue .sk-datepicker-time .sk-datepicker-times{float:right;}
+.sk-datepicker-blue.sk-datepicker-contain .sk-datepicker-button{display:inline-block;margin:5px;padding:0.25em 0.5em;cursor:pointer;border:1px solid #ccc;border-radius: 3px;}
+.sk-datepicker-blue.sk-datepicker-contain .sk-datepicker-button:hover{color:#fff;background-color: #398def;}
+.sk-datepicker-blue.sk-datepicker-group,.sk-datepicker-blue.sk-datepicker-input{display:inline-block;}
+.sk-datepicker-blue.sk-datepicker-input input{margin:auto!important;padding:auto!important;outline:none;width:165px;height:20px;color:#333;border:1px solid #ccc;border-radius: 4px;padding-left:10px;}
+.sk-datepicker-blue.sk-datepicker-group input{border-radius: 15px 0 0 15px;}
+.sk-datepicker-blue.sk-datepicker-group .sk-datepicker-calendarIcon{border-radius:0  15px 15px 0;padding-right:3px;display:inline-block;color:#398def;border:1px solid #ccc;border-left:0;text-align: center;vertical-align: middle;width:30px;height:22px;cursor: pointer;}
+.sk-datepicker-blue .sk-datepicker-button-disabled,.sk-datepicker-blue .sk-datepicker-disabled{color:#ddd!important;cursor:not-allowed!important;}
+.sk-datepicker-blue .sk-datepicker-button-disabled:hover,.sk-datepicker-blue .sk-datepicker-disabled:hover{color:#ddd!important;background-color: #fff!important;}
+.sk-datepicker-blue .sk-datepicker-disabled.sk-datepicker-active{color:#fff!important;background-color: #398def!important;cursor: not-allowed;}
+.sk-datepicker-bgDark.sk-datepicker-blue.sk-datepicker-contain{color:#fff!important;background-color: #0d54a7;}
+.sk-datepicker-bgDark.sk-datepicker-blue.sk-datepicker-contain td>a{color:#fff!important;}
+.sk-datepicker-bgDark.sk-datepicker-blue.sk-datepicker-contain td>a.sk-datepicker-disabled{color:#908686!important;}
+.sk-datepicker-bgDark.sk-datepicker-blue.sk-datepicker-contain td>a.sk-datepicker-disabled:hover{color:#908686!important;background-color: transparent!important;}
+.sk-datepicker-bgDark.sk-datepicker-blue.sk-datepicker-contain td>a.sk-datepicker-disabled.sk-datepicker-active{color:#fff!important;;background-color: #398def!important;}
+.sk-datepicker-bgDark.sk-datepicker-blue.sk-datepicker-contain .sk-datepicker-button{background-color: #398def;color: #fff;border-color: #fff;}
+.sk-datepicker-bgDark.sk-datepicker-blue.sk-datepicker-contain .sk-datepicker-button.sk-datepicker-button-disabled{color: #d2c9c9!important;}
+.sk-datepicker-bgDark.sk-datepicker-blue.sk-datepicker-contain .sk-datepicker-button.sk-datepicker-button-disabled:hover{background-color: #398def!important;color:#d2c9c9!important;}
+
+
+
+/********************************calendar****css*******dark主题****************************/
+.sk-datepicker-dark.sk-datepicker-contain{display:none;font-size:small;position:absolute;width:15em;padding-bottom:0.5em;background: #fff;border-radius: 3px;box-shadow: 1px 1px 2px 2px #ccc;border:1px solid #ddd;}
+.sk-datepicker-dark .sk-datepicker-header{border-radius:3px 3px 0 0;text-align: center;position:relative;background-color: #353F4B;padding:5px;color:#fff;}
+.sk-datepicker-dark .sk-datepicker-header a{text-decoration: none;color:#353F4B;text-align:center;background-color: #fff;border-radius:4px;display:inline-block;width:1.3em;height:1.3em;}
+.sk-datepicker-dark .sk-datepicker-header a:hover{background-color: #ddd;}
+.sk-datepicker-dark .sk-datepicker-header .sk-datepicker-prev,.sk-datepicker-dark .sk-datepicker-header .sk-datepicker-next{position:absolute;}
+.sk-datepicker-dark .sk-datepicker-header .sk-datepicker-prev{left:5px;}
+.sk-datepicker-dark .sk-datepicker-header .sk-datepicker-next{right:5px;}
+.sk-datepicker-dark .sk-datepicker-header .sk-datepicker-year{width:3em;display:inline-block;}
+.sk-datepicker-dark .sk-datepicker-header .sk-datepicker-month{width:2em;display:inline-block;}
+.sk-datepicker-dark.sk-datepicker-contain table{width:100%;height:147px;}
+.sk-datepicker-dark.sk-datepicker-contain table td{text-align: center;}
+.sk-datepicker-dark .sk-datepicker-calendar a{text-decoration: none;color:#000;display: inline-block;width:100%;height:100%;}
+.sk-datepicker-dark .sk-datepicker-calendar a:hover,.sk-datepicker-dark .sk-datepicker-calendar .sk-datepicker-active{color:#fff;background-color: #353F4B;}
+.sk-datepicker-dark .sk-datepicker-time{padding:5px;}
+.sk-datepicker-dark .sk-datepicker-time .sk-datepicker-title{float: left;}
+.sk-datepicker-dark .sk-datepicker-time .sk-datepicker-times{float:right;}
+.sk-datepicker-dark.sk-datepicker-contain .sk-datepicker-button{display:inline-block;margin:5px;padding:0.25em 0.5em;cursor:pointer;border:1px solid #ccc;border-radius: 3px;}
+.sk-datepicker-dark.sk-datepicker-contain .sk-datepicker-button:hover{color:#fff;background-color: #353F4B;}
+.sk-datepicker-dark.sk-datepicker-group,.sk-datepicker-dark.sk-datepicker-input{display:inline-block;}
+.sk-datepicker-dark.sk-datepicker-input input{margin:auto!important;padding:auto!important;outline:none;width:165px;height:20px;color:#333;border:1px solid #ccc;border-radius: 4px;padding-left:10px;}
+.sk-datepicker-dark.sk-datepicker-group input{border-radius: 15px 0 0 15px;}
+.sk-datepicker-dark.sk-datepicker-group .sk-datepicker-calendarIcon{border-radius:0  15px 15px 0;padding-right:3px;display:inline-block;color:#353F4B;border:1px solid #ccc;border-left:0;text-align: center;vertical-align: middle;width:30px;height:22px;cursor: pointer;}
+.sk-datepicker-dark .sk-datepicker-button-disabled,.sk-datepicker-dark .sk-datepicker-disabled{color:#ddd!important;cursor:not-allowed!important;}
+.sk-datepicker-dark .sk-datepicker-button-disabled:hover,.sk-datepicker-dark .sk-datepicker-disabled:hover{color:#ddd!important;background-color: #fff!important;}
+.sk-datepicker-dark .sk-datepicker-disabled.sk-datepicker-active{color:#fff!important;background-color: #353F4B!important;cursor: not-allowed;}
+.sk-datepicker-bgDark.sk-datepicker-dark.sk-datepicker-contain{color:#fff!important;background-color: #1b1919;}
+.sk-datepicker-bgDark.sk-datepicker-dark.sk-datepicker-contain td>a{color:#fff!important;}
+.sk-datepicker-bgDark.sk-datepicker-dark.sk-datepicker-contain td>a.sk-datepicker-disabled{color:#908686!important;}
+.sk-datepicker-bgDark.sk-datepicker-dark.sk-datepicker-contain td>a.sk-datepicker-disabled:hover{color:#908686!important;background-color: transparent!important;}
+.sk-datepicker-bgDark.sk-datepicker-dark.sk-datepicker-contain td>a.sk-datepicker-disabled.sk-datepicker-active{color:#fff!important;;background-color: #353F4B!important;}
+.sk-datepicker-bgDark.sk-datepicker-dark.sk-datepicker-contain .sk-datepicker-button{background-color: #353F4B;color: #fff;border-color: #fff;}
+.sk-datepicker-bgDark.sk-datepicker-dark.sk-datepicker-contain .sk-datepicker-button.sk-datepicker-button-disabled{color: #d2c9c9!important;}
+.sk-datepicker-bgDark.sk-datepicker-dark.sk-datepicker-contain .sk-datepicker-button.sk-datepicker-button-disabled:hover{background-color: #353F4B!important;color:#d2c9c9!important;}
+
+
+/********************************calendar****css*******red主题****************************/
+.sk-datepicker-red.sk-datepicker-contain{display:none;font-size:small;position:absolute;width:15em;padding-bottom:0.5em;background: #fff;border-radius: 3px;box-shadow: 1px 1px 2px 2px #ccc;border:1px solid #ddd;}
+.sk-datepicker-red .sk-datepicker-header{border-radius:3px 3px 0 0;text-align: center;position:relative;background-color: #d43f3a;padding:5px;color:#fff;}
+.sk-datepicker-red .sk-datepicker-header a{text-decoration: none;color:#d43f3a;text-align:center;background-color: #fff;border-radius:4px;display:inline-block;width:1.3em;height:1.3em;}
+.sk-datepicker-red .sk-datepicker-header a:hover{background-color: #ddd;}
+.sk-datepicker-red .sk-datepicker-header .sk-datepicker-prev,.sk-datepicker-red .sk-datepicker-header .sk-datepicker-next{position:absolute;}
+.sk-datepicker-red .sk-datepicker-header .sk-datepicker-prev{left:5px;}
+.sk-datepicker-red .sk-datepicker-header .sk-datepicker-next{right:5px;}
+.sk-datepicker-red .sk-datepicker-header .sk-datepicker-year{width:3em;display:inline-block;}
+.sk-datepicker-red .sk-datepicker-header .sk-datepicker-month{width:2em;display:inline-block;}
+.sk-datepicker-red.sk-datepicker-contain table{width:100%;height:147px;}
+.sk-datepicker-red.sk-datepicker-contain table td{text-align: center;}
+.sk-datepicker-red .sk-datepicker-calendar a{text-decoration: none;color:#000;display: inline-block;width:100%;height:100%;}
+.sk-datepicker-red .sk-datepicker-calendar a:hover,.sk-datepicker-red .sk-datepicker-calendar .sk-datepicker-active{color:#fff;background-color: #d43f3a;}
+.sk-datepicker-red .sk-datepicker-time{padding:5px;}
+.sk-datepicker-red .sk-datepicker-time .sk-datepicker-title{float: left;}
+.sk-datepicker-red .sk-datepicker-time .sk-datepicker-times{float:right;}
+.sk-datepicker-red.sk-datepicker-contain .sk-datepicker-button{display:inline-block;margin:5px;padding:0.25em 0.5em;cursor:pointer;border:1px solid #ccc;border-radius: 3px;}
+.sk-datepicker-red.sk-datepicker-contain .sk-datepicker-button:hover{color:#fff;background-color: #d43f3a;}
+.sk-datepicker-red.sk-datepicker-group,.sk-datepicker-red.sk-datepicker-input{display:inline-block;}
+.sk-datepicker-red.sk-datepicker-input input{margin:auto!important;padding:auto!important;outline:none;width:165px;height:20px;color:#333;border:1px solid #ccc;border-radius: 4px;padding-left:10px;}
+.sk-datepicker-red.sk-datepicker-group input{border-radius: 15px 0 0 15px;}
+.sk-datepicker-red.sk-datepicker-group .sk-datepicker-calendarIcon{border-radius:0  15px 15px 0;padding-right:3px;display:inline-block;color:#d43f3a;border:1px solid #ccc;border-left:0;text-align: center;vertical-align: middle;width:30px;height:22px;cursor: pointer;}
+.sk-datepicker-red .sk-datepicker-button-disabled,.sk-datepicker-red .sk-datepicker-disabled{color:#ddd!important;cursor:not-allowed!important;}
+.sk-datepicker-red .sk-datepicker-button-disabled:hover,.sk-datepicker-red .sk-datepicker-disabled:hover{color:#ddd!important;background-color: #fff!important;}
+.sk-datepicker-red .sk-datepicker-disabled.sk-datepicker-active{color:#fff!important;background-color: #d43f3a!important;cursor: not-allowed;}
+.sk-datepicker-bgDark.sk-datepicker-red.sk-datepicker-contain{color:#fff!important;background-color: #a71611;}
+.sk-datepicker-bgDark.sk-datepicker-red.sk-datepicker-contain td>a{color:#fff!important;}
+.sk-datepicker-bgDark.sk-datepicker-red.sk-datepicker-contain td>a.sk-datepicker-disabled{color:#908686!important;}
+.sk-datepicker-bgDark.sk-datepicker-red.sk-datepicker-contain td>a.sk-datepicker-disabled:hover{color:#908686!important;background-color: transparent!important;}
+.sk-datepicker-bgDark.sk-datepicker-red.sk-datepicker-contain td>a.sk-datepicker-disabled.sk-datepicker-active{color:#fff!important;;background-color: #d43f3a!important;}
+.sk-datepicker-bgDark.sk-datepicker-red.sk-datepicker-contain .sk-datepicker-button{background-color: #d43f3a;color: #fff;border-color: #fff;}
+.sk-datepicker-bgDark.sk-datepicker-red.sk-datepicker-contain .sk-datepicker-button.sk-datepicker-button-disabled{color: #d2c9c9!important;}
+.sk-datepicker-bgDark.sk-datepicker-red.sk-datepicker-contain .sk-datepicker-button.sk-datepicker-button-disabled:hover{background-color: #d43f3a!important;color:#d2c9c9!important;}
+
+
+/********************************calendar****css*******green主题****************************/
+.sk-datepicker-green.sk-datepicker-contain{display:none;font-size:small;position:absolute;width:15em;padding-bottom:0.5em;background: #fff;border-radius: 3px;box-shadow: 1px 1px 2px 2px #ccc;border:1px solid #ddd;}
+.sk-datepicker-green .sk-datepicker-header{border-radius:3px 3px 0 0;text-align: center;position:relative;background-color: #009a61;padding:5px;color:#fff;}
+.sk-datepicker-green .sk-datepicker-header a{text-decoration: none;color:#009a61;text-align:center;background-color: #fff;border-radius:4px;display:inline-block;width:1.3em;height:1.3em;}
+.sk-datepicker-green .sk-datepicker-header a:hover{background-color: #ddd;}
+.sk-datepicker-green .sk-datepicker-header .sk-datepicker-prev,.sk-datepicker-green .sk-datepicker-header .sk-datepicker-next{position:absolute;}
+.sk-datepicker-green .sk-datepicker-header .sk-datepicker-prev{left:5px;}
+.sk-datepicker-green .sk-datepicker-header .sk-datepicker-next{right:5px;}
+.sk-datepicker-green .sk-datepicker-header .sk-datepicker-year{width:3em;display:inline-block;}
+.sk-datepicker-green .sk-datepicker-header .sk-datepicker-month{width:2em;display:inline-block;}
+.sk-datepicker-green.sk-datepicker-contain table{width:100%;height:147px;}
+.sk-datepicker-green.sk-datepicker-contain table td{text-align: center;}
+.sk-datepicker-green .sk-datepicker-calendar a{text-decoration: none;color:#000;display: inline-block;width:100%;height:100%;}
+.sk-datepicker-green .sk-datepicker-calendar a:hover,.sk-datepicker-green .sk-datepicker-calendar .sk-datepicker-active{color:#fff;background-color: #009a61;}
+.sk-datepicker-green .sk-datepicker-time{padding:5px;}
+.sk-datepicker-green .sk-datepicker-time .sk-datepicker-title{float: left;}
+.sk-datepicker-green .sk-datepicker-time .sk-datepicker-times{float:right;}
+.sk-datepicker-green.sk-datepicker-contain .sk-datepicker-button{display:inline-block;margin:5px;padding:0.25em 0.5em;cursor:pointer;border:1px solid #ccc;border-radius: 3px;}
+.sk-datepicker-green.sk-datepicker-contain .sk-datepicker-button:hover{color:#fff;background-color: #009a61;}
+.sk-datepicker-green.sk-datepicker-group,.sk-datepicker-green.sk-datepicker-input{display:inline-block;}
+.sk-datepicker-green.sk-datepicker-input input{margin:auto!important;padding:auto!important;outline:none;width:165px;height:20px;color:#333;border:1px solid #ccc;border-radius: 4px;padding-left:10px;}
+.sk-datepicker-green.sk-datepicker-group input{border-radius: 15px 0 0 15px;}
+.sk-datepicker-green.sk-datepicker-group .sk-datepicker-calendarIcon{border-radius:0  15px 15px 0;padding-right:3px;display:inline-block;color:#009a61;border:1px solid #ccc;border-left:0;text-align: center;vertical-align: middle;width:30px;height:22px;cursor: pointer;}
+.sk-datepicker-green .sk-datepicker-button-disabled,.sk-datepicker-green .sk-datepicker-disabled{color:#ddd!important;cursor:not-allowed!important;}
+.sk-datepicker-green .sk-datepicker-button-disabled:hover,.sk-datepicker-green .sk-datepicker-disabled:hover{color:#ddd!important;background-color: #fff!important;}
+.sk-datepicker-green .sk-datepicker-disabled.sk-datepicker-active{color:#fff!important;background-color: #009a61!important;cursor: not-allowed;}
+.sk-datepicker-bgDark.sk-datepicker-green.sk-datepicker-contain{color:#fff!important;background-color: #086d48;}
+.sk-datepicker-bgDark.sk-datepicker-green.sk-datepicker-contain td>a{color:#fff!important;}
+.sk-datepicker-bgDark.sk-datepicker-green.sk-datepicker-contain td>a.sk-datepicker-disabled{color:#908686!important;}
+.sk-datepicker-bgDark.sk-datepicker-green.sk-datepicker-contain td>a.sk-datepicker-disabled:hover{color:#908686!important;background-color: transparent!important;}
+.sk-datepicker-bgDark.sk-datepicker-green.sk-datepicker-contain td>a.sk-datepicker-disabled.sk-datepicker-active{color:#fff!important;;background-color: #009a61!important;}
+.sk-datepicker-bgDark.sk-datepicker-green.sk-datepicker-contain .sk-datepicker-button{background-color: #009a61;color: #fff;border-color: #fff;}
+.sk-datepicker-bgDark.sk-datepicker-green.sk-datepicker-contain .sk-datepicker-button.sk-datepicker-button-disabled{color: #d2c9c9!important;}
+.sk-datepicker-bgDark.sk-datepicker-green.sk-datepicker-contain .sk-datepicker-button.sk-datepicker-button-disabled:hover{background-color: #009a61!important;color:#d2c9c9!important;}
+
+
+/********************************calendar****css*******orange主题****************************/
+.sk-datepicker-orange.sk-datepicker-contain{display:none;font-size:small;position:absolute;width:15em;padding-bottom:0.5em;background: #fff;border-radius: 3px;box-shadow: 1px 1px 2px 2px #ccc;border:1px solid #ddd;}
+.sk-datepicker-orange .sk-datepicker-header{border-radius:3px 3px 0 0;text-align: center;position:relative;background-color: #d64;padding:5px;color:#fff;}
+.sk-datepicker-orange .sk-datepicker-header a{text-decoration: none;color:#d64;text-align:center;background-color: #fff;border-radius:4px;display:inline-block;width:1.3em;height:1.3em;}
+.sk-datepicker-orange .sk-datepicker-header a:hover{background-color: #ddd;}
+.sk-datepicker-orange .sk-datepicker-header .sk-datepicker-prev,.sk-datepicker-orange .sk-datepicker-header .sk-datepicker-next{position:absolute;}
+.sk-datepicker-orange .sk-datepicker-header .sk-datepicker-prev{left:5px;}
+.sk-datepicker-orange .sk-datepicker-header .sk-datepicker-next{right:5px;}
+.sk-datepicker-orange .sk-datepicker-header .sk-datepicker-year{width:3em;display:inline-block;}
+.sk-datepicker-orange .sk-datepicker-header .sk-datepicker-month{width:2em;display:inline-block;}
+.sk-datepicker-orange.sk-datepicker-contain table{width:100%;height:147px;}
+.sk-datepicker-orange.sk-datepicker-contain table td{text-align: center;}
+.sk-datepicker-orange .sk-datepicker-calendar a{text-decoration: none;color:#000;display: inline-block;width:100%;height:100%;}
+.sk-datepicker-orange .sk-datepicker-calendar a:hover,.sk-datepicker-orange .sk-datepicker-calendar .sk-datepicker-active{color:#fff;background-color: #d64;}
+.sk-datepicker-orange .sk-datepicker-time{padding:5px;}
+.sk-datepicker-orange .sk-datepicker-time .sk-datepicker-title{float: left;}
+.sk-datepicker-orange .sk-datepicker-time .sk-datepicker-times{float:right;}
+.sk-datepicker-orange.sk-datepicker-contain .sk-datepicker-button{display:inline-block;margin:5px;padding:0.25em 0.5em;cursor:pointer;border:1px solid #ccc;border-radius: 3px;}
+.sk-datepicker-orange.sk-datepicker-contain .sk-datepicker-button:hover{color:#fff;background-color: #d64;}
+.sk-datepicker-orange.sk-datepicker-group,.sk-datepicker-orange.sk-datepicker-input{display:inline-block;}
+.sk-datepicker-orange.sk-datepicker-input input{margin:0!important;outline:none;width:165px;height:20px;color:#333;border:1px solid #ccc;border-radius: 4px;padding-left:10px;}
+.sk-datepicker-orange.sk-datepicker-group input{margin:0!important;border-radius: 15px 0 0 15px;}
+.sk-datepicker-orange.sk-datepicker-group .sk-datepicker-calendarIcon{border-radius:0  15px 15px 0;padding-right:3px;display:inline-block;color:#d64;border:1px solid #ccc;border-left:0;text-align: center;vertical-align: middle;width:30px;height:22px;cursor: pointer;}
+.sk-datepicker-orange .sk-datepicker-button-disabled,.sk-datepicker-orange .sk-datepicker-disabled{color:#ddd!important;cursor:not-allowed!important;}
+.sk-datepicker-orange .sk-datepicker-button-disabled:hover,.sk-datepicker-orange .sk-datepicker-disabled:hover{color:#ddd!important;background-color: #fff!important; }
+.sk-datepicker-orange .sk-datepicker-disabled.sk-datepicker-active{color:#fff!important;background-color: #d64!important;cursor: not-allowed;}
+.sk-datepicker-bgDark.sk-datepicker-orange.sk-datepicker-contain{color:#fff!important;background-color: #ad4a2e;}
+.sk-datepicker-bgDark.sk-datepicker-orange.sk-datepicker-contain td>a{color:#fff!important;}
+.sk-datepicker-bgDark.sk-datepicker-orange.sk-datepicker-contain td>a.sk-datepicker-disabled{color:#908686!important;}
+.sk-datepicker-bgDark.sk-datepicker-orange.sk-datepicker-contain td>a.sk-datepicker-disabled:hover{color:#908686!important;background-color: transparent!important;}
+.sk-datepicker-bgDark.sk-datepicker-orange.sk-datepicker-contain td>a.sk-datepicker-disabled.sk-datepicker-active{color:#fff!important;;background-color: #d64!important;}
+.sk-datepicker-bgDark.sk-datepicker-orange.sk-datepicker-contain .sk-datepicker-button{background-color: #d64;color: #fff;border-color: #fff;}
+.sk-datepicker-bgDark.sk-datepicker-orange.sk-datepicker-contain .sk-datepicker-button.sk-datepicker-button-disabled{color: #d2c9c9!important;}
+.sk-datepicker-bgDark.sk-datepicker-orange.sk-datepicker-contain .sk-datepicker-button.sk-datepicker-button-disabled:hover{background-color: #d64!important;color:#d2c9c9!important;}
+
+
