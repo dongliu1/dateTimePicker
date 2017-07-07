@@ -5,63 +5,58 @@
  设置日期：$(selector).skdatepicker('setDate',time,callback);
  获取日期：$(selector).skdatepicker('getDate'，callback);
  */
-
 (function ($) {																//闭包限定命名空间
-
-    $.extend({skdaterange:function () {
-        var obj1=$(arguments[0]);
-        var obj2=$(arguments[1]);
-        if(obj1.length&&obj2.length){
-            var opt=arguments[2];
-            if($.isPlainObject(opt)){
-                var _defaultDate=new Date().valueOf();
-                var _default={
-                    startDate:{defaultDate:_defaultDate},
-                    endDate:{defaultDate:_defaultDate+1000}
-                };
-                if(opt.startDate&&opt.endDate){
-                    opt.startDate=$.extend({},_default.startDate,opt.startDate);
-                    opt.endDate=$.extend({},_default.endDate,opt.endDate);
-                    if(isNaN(opt.startDate.defaultDate))opt.startDate.defaultDate=new Date(opt.startDate.defaultDate).valueOf();
-                    if(isNaN(opt.endDate.defaultDate))opt.endDate.defaultDate=new Date(opt.endDate.defaultDate).valueOf();
-                    if(isNaN(opt.startDate.defaultDate)){
-                        opt.startDate.defaultDate=_defaultDate;
+    $.extend({
+        skdaterange: function () {
+            var obj1 = $(arguments[0]);
+            var obj2 = $(arguments[1]);
+            if (obj1.length && obj2.length) {
+                var opt = arguments[2];
+                if ($.isPlainObject(opt)) {
+                    var _defaultDate = new Date().valueOf();
+                    var _default = {
+                        rangeStartObj:obj1,
+                        rangeEndObj:obj2,
+                        startDate: {defaultDate: _defaultDate},
+                        endDate: {defaultDate: _defaultDate + 1000}
+                    };
+                    delete opt.rangeStartObj;
+                    delete opt.rangeEndObj;
+                    opt = $.extend(true, {}, _default, opt);
+                    if (isNaN(opt.startDate.defaultDate)) opt.startDate.defaultDate = new Date(opt.startDate.defaultDate).valueOf();
+                    if (isNaN(opt.endDate.defaultDate)) opt.endDate.defaultDate = new Date(opt.endDate.defaultDate).valueOf();
+                    if (isNaN(opt.startDate.defaultDate)) {
+                        opt.startDate.defaultDate = _defaultDate;
                         console.log("#error:已将开始时间设为当前时间，请检查开始时间是否正确")
                     }
-                    if(isNaN(opt.endDate.defaultDate)){
-                        opt.startDate.defaultDate=opt.startDate.defaultDate+1000;
+                    if (isNaN(opt.endDate.defaultDate)) {
+                        opt.startDate.defaultDate = opt.startDate.defaultDate + 1000;
                         console.log("#error:已将结束时间设为开始时间1秒后，请检查结束时间是否正确")
                     }
-                }else{
-                    $.extend(opt.startDate,_default.startDate);
-                    $.extend(opt.endDate,_default.endDate);
-                }
-
-                console.log(opt.startDate.defaultDate,opt.endDate.defaultDate);
-                if(opt.startDate.defaultDate<opt.endDate.defaultDate){
-                    $.extend(_default,opt);
-                    _default.rangeStartObj=obj1;
-                    _default.rangeEndObj=obj2;
-                    _default.rangeStart=true;
-                    _default.rangeEnd=false;
-                    $(obj1).skdatepicker(_default);
-                    _default.rangeStart=false;
-                    _default.rangeEnd=true;
-                    $(obj2).skdatepicker(_default);
-                }else{
-                    console.log("#error:开始时间不能大于结束时间");
+                    if (opt.startDate.defaultDate < opt.endDate.defaultDate) {
+                        opt.rangeStart = true;
+                        opt.rangeEnd = false;
+                        $(obj1).skdatepicker(opt);
+                        opt.rangeStart = false;
+                        opt.rangeEnd = true;
+                        console.log(JSON.stringify(opt));
+                        $(obj2).skdatepicker(opt);
+                    } else {
+                        console.log("#error:开始时间不能大于结束时间");
+                        return false;
+                    }
+                } else {
+                    console.log("#error:请检查传入参数格式是否正确");
                     return false;
                 }
-            }else{
+            } else {
                 console.log("#error:请检查传入参数格式是否正确");
                 return false;
             }
-        }else{
-            console.log("#error:请检查传入参数格式是否正确");
-            return false;
         }
-    }});
-
+    });
+})(window.jQuery);
+(function ($) {																//闭包限定命名空间
     $.fn.skdatepicker = function(){
         var data;
         if($(this)[0].tagName!=="INPUT"){
@@ -196,14 +191,15 @@
             }
             this._init_dateTime();
         },
-        _init_dateTime:function (isInputClick) {
+        _init_dateTime:function () {
             var opt=this.default;
             var _this=this.$scope;
             var timeJson=this._init_dateFormat(opt.defaultDate);
             opt.dateTime=timeJson.dateTime;
             opt.dateType=timeJson.dateType;
-            if(!isInputClick)$(_this).val(opt.dateTime);
+            $(_this).val(opt.dateTime);
             opt.timeInfo=timeJson.timeInfo;
+            //console.log(opt.dateTime,opt.rangeStart,opt.rangeEnd);
             if(opt.rangeStart || opt.rangeEnd){
                 this._init_rangeDateTime();
             }
@@ -319,15 +315,16 @@
                 unProp="startDate";
             }
             opt[prop].defaultDate=opt.defaultDate;
+            if(!opt[unProp].defaultDate)opt[unProp].defaultDate=new Date($(oppositeObj).val()).valueOf();
             if(opt.rangeEnd&&opt[prop].defaultDate<=opt[unProp].defaultDate){
                 opt[unProp].defaultDate=opt[prop].defaultDate-1000;
             }else if(opt.rangeStart&&opt[prop].defaultDate>=opt[unProp].defaultDate){
                 opt[unProp].defaultDate=opt[prop].defaultDate+1000;
             }else{
-                opt[unProp].defaultDate=new Date(oppositeObj.val()).valueOf();
+                opt[unProp].defaultDate=new Date($(oppositeObj).val()).valueOf();
             }
             var timeJson=this._init_dateFormat(opt[unProp].defaultDate);
-            oppositeObj.val(timeJson.dateTime);
+            $(oppositeObj).val(timeJson.dateTime);
         },
         _init_selectYears:function (curYear) {
             var _html="<select class='sk-datepicker-selectYear'>" ;
@@ -349,7 +346,6 @@
         },
         _init_tbody:function (timeInfo) {
             var opt=this.default;
-            var _curDate=opt.defaultDate;
             var year=timeInfo.year;
             var month=timeInfo.month;
             var monthDays=timeInfo.monthDays;
@@ -467,7 +463,7 @@
                     $(".sk-datepicker-button",opt.bindCalendarObj).addClass("sk-datepicker-button-disabled");
             }else if(opt.rangeEnd){
                 var minDate=opt.startDate.defaultDate;
-                console.log("render",opt.tdUnixTime<=minDate);
+                //console.log("render",opt.tdUnixTime<=minDate);
                 if(opt.tdUnixTime<=minDate)
                     $(".sk-datepicker-button",opt.bindCalendarObj).addClass("sk-datepicker-button-disabled");
             }
@@ -482,7 +478,7 @@
                     var _curYear = parseInt(_slctYearObj.val());
                     var _slctHtml = that._init_selectYears(_curYear);
                     $(_slctYearObj).after(_slctHtml).remove();
-                   that._set_changeYears()
+                    that._set_changeYears()
                     return false;
                 }
             })
@@ -586,23 +582,14 @@
             });
             $(_this).bind("click",function () {
                 //捕获光标位置
-                var el = $(this).get(0);
-                var pos = 0;
-                if ('selectionStart' in el) {
-                    pos = el.selectionStart;
-                } else if ('selection' in document) {
-                    el.focus();
-                    var Sel = document.selection.createRange();
-                    var SelLength = document.selection.createRange().text.length;
-                    Sel.moveStart('character', -el.value.length);
-                    pos = Sel.text.length - SelLength;
-                }
+                var pos=that._init_getCursortPosition(_this);
                 //重新设置时间
                 var time=$(this).val();
                 $(".sk-datepicker-contain").hide();
                 $(opt.bindCalendarObj).show();
-                that._setDate(time,true);
+                that._setDate(time);
                 //设置光标位置
+                that._init_setCaretPosition(_this,pos);
                 return false;
             }).bind("change",function () {
                 var time=$(this).val();
@@ -619,6 +606,36 @@
                 that._setDate(time);
                 return false;
             })
+        },
+        //捕获光标
+        _init_getCursortPosition:function(ctrl) {
+            var el = $(ctrl).get(0);
+            var pos = 0;
+            if ('selectionStart' in el) {
+                pos = el.selectionStart;
+            } else if ('selection' in document) {
+                el.focus();
+                var Sel = document.selection.createRange();
+                var SelLength = document.selection.createRange().text.length;
+                Sel.moveStart('character', -el.value.length);
+                pos = Sel.text.length - SelLength;
+            }
+            return pos;
+        },
+        //设置光标
+        _init_setCaretPosition:function(ctrl, pos) {
+            if(ctrl.setSelectionRange)
+            {
+                ctrl.focus();
+                ctrl.setSelectionRange(pos,pos);
+            }
+            else if (ctrl.createTextRange) {
+                var range = ctrl.createTextRange();
+                range.collapse(true);
+                range.moveEnd('character', pos);
+                range.moveStart('character', pos);
+                range.select();
+            }
         },
         _bind_timeChange:function () {
             var opt=this.default;
@@ -649,12 +666,12 @@
                 }
             })
         },
-        _setDate:function (time,isInputClick) {
+        _setDate:function (time) {
             var opt=this.default;
             opt.defaultDate=new Date().valueOf();
             if(time)opt.defaultDate=new Date(time).valueOf();
             if(opt.defaultDate>=0){
-                this._init_dateTime(isInputClick);
+                this._init_dateTime();
                 var month=opt.timeInfo.month<10?("0"+opt.timeInfo.month):opt.timeInfo.month;
                 var hour=opt.timeInfo.hour<10?("0"+opt.timeInfo.hour):opt.timeInfo.hour;
                 var minute=opt.timeInfo.minute<10?("0"+opt.timeInfo.minute):opt.timeInfo.minute;
@@ -671,14 +688,16 @@
                 $(".sk-datepicker-seconds",opt.bindCalendarObj).val(second);
                 this._init_renderElem();
             }else{
-                if(!isInputClick)$(this.$scope).val(opt.dateTime);
+                $(this.$scope).val(opt.dateTime);
                 opt.defaultDate=new Date(opt.dateTime).valueOf();
                 console.log("#error:修改未成功,时间错误,请输入正确的时间。")
             }
         },
         _getDate:function () {
-            var opt=this.default;
-            return opt.dateTime;
+            return $(this.$scope).val();
+        },
+        _getUnixDate:function () {
+            return new Date($(this.$scope).val()).valueOf();
         },
     }
 })(window.jQuery);
