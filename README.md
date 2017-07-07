@@ -9,7 +9,7 @@
         <div>&emsp;jquery.min.js</div>
         <div>&emsp;rox-datepicker.js</div>
         <h5>2、初始化</h5>
-        <div class="code-contain">
+        <div class="code-contain" style="background-color:#252323;color:#1cad1c;">
             <div>var opt={</div>
             <div>&emsp;&emsp;defaultDate:"2017-7-16 16:44:00",</div>
             <div>&emsp;&emsp;dateFormat:"YYYY-MM-DD HH:mm:ss",</div>
@@ -22,7 +22,7 @@
             <div>$(element).skdatepicker(opt)</div>
         </div>
         <h5>3、起始时间设置:</h5>
-        <div class="code-contain">
+        <div class="code-contain" style="background-color:#252323;color:#1cad1c;">
             <div>var opt={</div>
             <div>&emsp;&emsp;dateFormat:"YYYY-MM-DD HH:mm:ss",</div>
             <div>&emsp;&emsp;yearChanged:false,</div>
@@ -113,9 +113,9 @@
         </table>
         <h3>日历操作</h3>
         <h5>1、设置时间</h5>
-        <div>$(element).skdatepicker("setDate","2017-7-17 15:00:00",callback)</div>
+        <div style="background-color:#252323;color:#1cad1c;padding: 10px;">$(element).skdatepicker("setDate","2017-7-17 15:00:00",callback)</div>
         <h5>2、获取时间</h5>
-        <div>$(element).skdatepicker("getDate")</div>
+        <div style="background-color:#252323;color:#1cad1c;padding: 10px;">$(element).skdatepicker("getDate")</div>
         <h6>其它功能待定......</h6>
     </div>
 </div>
