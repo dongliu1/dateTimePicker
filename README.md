@@ -4,11 +4,11 @@
     <div class="plugin-used">
         <h3>使用方法</h3>
         <h4>日历初始化:</h4>
-        <div>1、引用css与js文件:</div>
-                <div>&emsp;rox-datepicker.css</div>
-                <div>&emsp;jquery.min.js</div>
-                <div>&emsp;rox-datepicker.js</div>
-                <div>2、初始化</div>
+        <h5>1、引用css与js文件:</h5>
+        <div>&emsp;rox-datepicker.css</div>
+        <div>&emsp;jquery.min.js</div>
+        <div>&emsp;rox-datepicker.js</div>
+        <h5>2、初始化</h5>
         <div class="code-contain">
             <div>var opt={</div>
             <div>&emsp;&emsp;defaultDate:"2017-7-16 16:44:00",</div>
@@ -21,7 +21,7 @@
             <div>}</div>
             <div>$(element).skdatepicker(opt)</div>
         </div>
-        <h4>起始时间设置:</h4>
+        <h5>3、起始时间设置:<h5>
         <div class="code-contain">
             <div>var opt={</div>
             <div>&emsp;&emsp;dateFormat:"YYYY-MM-DD HH:mm:ss",</div>
