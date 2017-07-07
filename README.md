@@ -52,7 +52,14 @@
                 <td width="150px">dateFormat</td>
                 <td width="100px">string</td>
                 <td width="350px">"YYYY-MM-DD HH:mm:ss"</td>
-                <td >用于规定时间显示格式，支持以下几种格式:<br/>"yyyy-mm-dd HH:mm:ss","MM/DD/YYYY HH:mm:ss","mm/dd/yyyy HH:mm:ss",<br/>"YYYY-MM-DD HH:mm","yyyy-mm-dd HH:mm","MM/DD/YYYY HH:mm",<br/>"mm/dd/yyyy HH:mm","YYYY/MM/DD HH:mm","yyyy/mm/dd HH:mm",<br/>"YYYY-MM-DD","yyyy-mm-dd","YYYY/MM/DD",<br/>"yyyy/mm/dd","MM/DD/YYYY","mm/dd/yyyy"</td>
+                <td >用于规定时间显示格式，支持以下几种格式:<br/>
+                    "yyyy-mm-dd HH:mm:ss","yyyy/mm/dd HH:mm:ss","mm/dd/yyyy HH:mm:ss","mm-dd-yyyy HH:mm:ss",<br/>
+                    "YYYY-MM-DD HH:mm:ss","YYYY/MM/DD HH:mm:ss","MM/DD/YYYY HH:mm:ss","MM-DD-YYYY HH:mm:ss",<br/>
+                    "YYYY-MM-DD HH:mm","YYYY/MM/DD HH:mm","MM/DD/YYYY HH:mm","MM-DD-YYYY HH:mm",<br/>
+                    "yyyy-mm-dd HH:mm","yyyy/mm/dd HH:mm","mm/dd/yyyy HH:mm","mm-dd-yyyy HH:mm",<br/>
+                    "YYYY-MM-DD","YYYY/MM/DD","MM-DD-YYYY","MM/DD/YYYY",<br/>
+                    "yyyy-mm-dd","yyyy/mm/dd","mm-dd-yyyy","mm/dd/yyyy"
+                 </td>
             </tr>
             <tr>
                 <td>yearChanged</td>
