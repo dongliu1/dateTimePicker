@@ -136,7 +136,7 @@
                 var _html="<div class='sk-datepicker-calendarIcon'><i class='icon-calendar'></i></div>";
                 opt.calendarObj=$(_html).insertAfter($(_this));
             }else{
-                $(_this).wrap("<div class='"+opt.theme+" sk-datepicker-input'></div>");
+                $(_this).wrap("<div class='sk-datepicker-"+opt.theme+" sk-datepicker-input'></div>");
             }
         },
         _init_element:function () {
@@ -226,6 +226,9 @@
                 case "yyyy-mm-dd HH:mm:ss":
                     dateTime=year+"-"+month+"-"+day+" "+hour+":"+minute+":"+second;
                     break;
+                case "MM-DD-YYYY HH:mm:ss":
+                    dateTime=month+"-"+day+"-"+year+" "+hour+":"+minute+":"+second;
+                    break;
                 case "MM/DD/YYYY HH:mm:ss":
                     dateTime=month+"/"+day+"/"+year+" "+hour+":"+minute+":"+second;
                     break;
@@ -238,6 +241,14 @@
                     break;
                 case "yyyy-mm-dd HH:mm":
                     dateTime=year+"-"+month+"-"+day+" "+hour+":"+minute;
+                    dateType="minute";
+                    break;
+                case "MM-DD-YYYY HH:mm":
+                    dateTime=month+"-"+day+"-"+year+" "+hour+":"+minute;
+                    dateType="minute";
+                    break;
+                case "mm-dd-yyyy HH:mm":
+                    dateTime=month+"-"+day+"-"+year+" "+hour+":"+minute;
                     dateType="minute";
                     break;
                 case "MM/DD/YYYY HH:mm":
@@ -262,6 +273,14 @@
                     break;
                 case "yyyy-mm-dd":
                     dateTime=year+"-"+month+"-"+day;
+                    dateType="day";
+                    break;
+                case "MM-DD-YYYY":
+                    dateTime=month+"-"+day+"-"+year;
+                    dateType="day";
+                    break;
+                case "mm-dd-yyyy":
+                    dateTime=month+"-"+day+"-"+year;
                     dateType="day";
                     break;
                 case "YYYY/MM/DD":
