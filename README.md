@@ -21,7 +21,7 @@
             <div>}</div>
             <div>$(element).skdatepicker(opt)</div>
         </div>
-        <h5>3、起始时间设置:<h5>
+        <h5>3、起始时间设置:</h5>
         <div class="code-contain">
             <div>var opt={</div>
             <div>&emsp;&emsp;dateFormat:"YYYY-MM-DD HH:mm:ss",</div>
