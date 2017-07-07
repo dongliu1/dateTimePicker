@@ -10,90 +10,29 @@
                 <div>&emsp;rox-datepicker.js</div>
                 <div>2、初始化</div>
         <div class="code-contain">
-            <table style="border:0!important;">
-                <tr style="border:0!important;">
-                    <td style="border:0!important;">var </td>
-                    <td style="border:0!important;">opt={</td>
-                </tr>
-                <tr style="border:0!important;">
-                    <td style="border:0!important;"></td>
-                    <td style="border:0!important;">defaultDate:"2017-7-16 16:44:00",</td>
-                </tr>
-                <tr style="border:0!important;">
-                    <td style="border:0!important;"></td>
-                    <td style="border:0!important;">dateFormat:"YYYY-MM-DD HH:mm:ss",</td>
-                </tr>
-                <tr style="border:0!important;">
-                    <td style="border:0!important;"></td>
-                    <td style="border:0!important;">yearChanged:true,</td>
-                </tr>
-                <tr style="border:0!important;">
-                    <td style="border:0!important;"></td>
-                    <td style="border:0!important;">monthChanged:true,</td>
-                </tr>
-                <tr style="border:0!important;">
-                    <td style="border:0!important;"></td>
-                    <td style="border:0!important;">calendarIcon:true,</td>
-                </tr>
-                <tr style="border:0!important;">
-                    <td style="border:0!important;"></td>
-                    <td style="border:0!important;">theme:"dark",</td>
-                </tr>
-                <tr style="border:0!important;">
-                    <td style="border:0!important;"></td>
-                    <td style="border:0!important;">isDarkTheme:false,</td>
-                </tr>
-                <tr style="border:0!important;">
-                    <td style="border:0!important;">}</td>
-                    <td style="border:0!important;"></td>
-                </tr>
-            </table>
+            <div>var opt={</div>
+            <div>&emsp;&emsp;defaultDate:"2017-7-16 16:44:00",</div>
+            <div>&emsp;&emsp;dateFormat:"YYYY-MM-DD HH:mm:ss",</div>
+            <div>&emsp;&emsp;yearChanged:true,</div>
+            <div>&emsp;&emsp;monthChanged:true,</div>
+            <div>&emsp;&emsp;calendarIcon:true,</div>
+            <div>&emsp;&emsp;theme:"dark",</div>
+            <div>&emsp;&emsp;isDarkTheme:false,</div>
+            <div>}</div>
             <div>$(element).skdatepicker(opt)</div>
         </div>
         <h4>起始时间设置:</h4>
         <div class="code-contain">
-            <table style="border:0!important;">
-                <tr style="border:0!important;">
-                    <td style="border:0!important;">var </td>
-                    <td style="border:0!important;">opt={</td>
-                </tr>
-                <tr style="border:0!important;">
-                    <td style="border:0!important;"></td>
-                    <td style="border:0!important;">dateFormat:"YYYY-MM-DD HH:mm:ss",</td>
-                </tr>
-                <tr style="border:0!important;">
-                    <td style="border:0!important;"></td>
-                    <td style="border:0!important;">yearChanged:false,</td>
-                </tr>
-                <tr style="border:0!important;">
-                    <td style="border:0!important;"></td>
-                    <td style="border:0!important;">monthChanged:false,</td>
-                </tr>
-                <tr style="border:0!important;">
-                    <td style="border:0!important;"></td>
-                    <td style="border:0!important;">calendarIcon:true,</td>
-                </tr>
-                <tr style="border:0!important;">
-                    <td style="border:0!important;"></td>
-                    <td style="border:0!important;">startDate:{defaultDate:"2017-7-15"},</td>
-                </tr>
-                <tr style="border:0!important;">
-                    <td style="border:0!important;"></td>
-                    <td style="border:0!important;">endDate:{defaultDate:"2017-7-25"},</td>
-                </tr>
-                <tr style="border:0!important;">
-                    <td style="border:0!important;"></td>
-                    <td style="border:0!important;">theme:"blue",</td>
-                </tr>
-                <tr style="border:0!important;">
-                    <td style="border:0!important;"></td>
-                    <td style="border:0!important;">isDarkTheme:true,</td>
-                </tr>
-                <tr style="border:0!important;">
-                    <td style="border:0!important;">}</td>
-                    <td style="border:0!important;"></td>
-                </tr>
-            </table>
+            <div>var opt={</div>
+            <div>&emsp;&emsp;dateFormat:"YYYY-MM-DD HH:mm:ss",</div>
+            <div>&emsp;&emsp;yearChanged:false,</div>
+            <div>&emsp;&emsp;monthChanged:false,</div>
+            <div>&emsp;&emsp;calendarIcon:true,</div>
+            <div>&emsp;&emsp;startDate:{defaultDate:"2017-7-15"},</div>
+            <div>&emsp;&emsp;endDate:{defaultDate:"2017-7-25"},</div>
+            <div>&emsp;&emsp;theme:"blue",</div>
+            <div>&emsp;&emsp;isDarkTheme:true,</div>
+            <div>}</div>
             <div>$.skdaterange($(element1),$(element2),opt)</div>
         </div>
     </div>

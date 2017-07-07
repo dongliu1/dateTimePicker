@@ -9,7 +9,7 @@
         .plugin-readme table{border-right:1px solid #ccc;border-bottom:1px solid #ccc;}
         .plugin-readme td,th{text-align: center;border-top:1px solid #ccc;border-left:1px solid #ccc;}
         .plugin-readme td:last-child{text-align: left;}
-        body{padding-left:10px;}
+        body{padding:20px;}
         .contain{width:100%;text-align: center;}
         .plugin-used,.plugin-readme,.calendar-contain{width:1313px;display: inline-block;margin:auto;text-align: left;}
         .code-contain{background-color: #252323;color:#1cad1c;padding:10px 20px;}
@@ -19,12 +19,11 @@
 <div class="contain">
     <div class="plugin-used">
         <h3>使用方法</h3>
-        <h4>日历初始化:</h4>
-        <div>1、引用css与js文件:</div>
+        <h4>1、引用css与js文件:</h4>
         <div>&emsp;rox-datepicker.css</div>
         <div>&emsp;jquery.min.js</div>
         <div>&emsp;rox-datepicker.js</div>
-        <div>2、初始化</div>
+        <h4>2、日历初始化:</h4>
         <div class="code-contain">
             <table>
                 <tr>
@@ -66,7 +65,7 @@
             </table>
             <div>$(element).skdatepicker(opt)</div>
         </div>
-        <h4>起始时间设置:</h4>
+        <h4>3、起始时间设置:</h4>
         <div class="code-contain">
             <table>
                 <tr>
@@ -114,7 +113,7 @@
         </div>
     </div>
     <div class="plugin-readme">
-        <h3>属性API</h3>
+        <h3>4、属性API</h3>
         <table width="100%" cellpadding="10" cellspacing="0">
             <thead>
             <tr>
@@ -181,7 +180,7 @@
             </tr>
             </tbody>
         </table>
-        <h3>日历操作</h3>
+        <h3>5、日历操作</h3>
         <h5>1、设置时间</h5>
         <div>$(element).skdatepicker("setDate","2017-7-17 15:00:00",callback)</div>
         <h5>2、获取时间</h5>
@@ -190,8 +189,8 @@
     </div>
     <div class="calendar-contain">
         <div class="calendar-theme">
-            <h2>Demo</h2>
-            <h4>日历样式:</h4>
+            <h2>6、Demo</h2>
+            <h4>1、日历样式:</h4>
             <select id="calendar-bg-type" onchange="_init_datePicker()">
                 <option value="isDark">显示背景色</option>
                 <option value="noDark" selected>不显示背景色</option>
@@ -219,11 +218,11 @@
         </div>
         <div id="calendar-contain">
             <div class="single-calendar">
-                <h4>深色主题：</h4>
+                <h4>2、深色主题：</h4>
                 <input type="text" id="sk-datepicker"/>
             </div>
             <div class="double-calendar">
-                <h4>深色主题联动日历：</h4>
+                <h4>3、深色主题联动日历：</h4>
                 <input type="text" id="sk-datepicker-prev"/>-
                 <input type="text" id="sk-datepicker-next"/>
             </div>
